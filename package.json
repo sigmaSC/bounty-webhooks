@@ -1,0 +1,15 @@
+{
+  "name": "bounty-webhooks",
+  "version": "1.0.0",
+  "description": "Webhook relay service that sends POST requests to configured URLs when bounty events occur.",
+  "type": "module",
+  "scripts": {
+    "start": "bun run index.ts",
+    "dev": "bun --watch run index.ts"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "keywords": ["bounty", "webhooks", "relay", "events", "notifications"],
+  "license": "MIT"
+}
