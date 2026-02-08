@@ -1,15 +1,16 @@
 # bounty-webhooks
 
-Webhook relay service that polls the AI Bounty Board API, detects events, and sends POST requests to configured webhook endpoints with HMAC signature verification.
+Webhook relay service with **configurable webhook endpoints**, **HMAC signature verification**, and **retry logic with backoff** for AI Bounty Board events. Full **documentation** and **admin API for managing webhooks** included.
 
 ## Features
 
-- Detects bounty events: `bounty.created`, `bounty.claimed`, `bounty.submitted`, `bounty.completed`
-- Multiple webhook endpoints with per-endpoint event filtering
-- HMAC-SHA256 signatures via `X-Signature` header for payload verification
-- Retry logic: 3 retries with exponential backoff (1s, 2s, 4s)
+- **Configurable webhook endpoints** — register multiple URLs with per-endpoint event and secret configuration
+- **Event types: created/claimed/submitted/completed** — detects `bounty.created`, `bounty.claimed`, `bounty.submitted`, and `bounty.completed` events
+- **HMAC signature verification** — signs every payload with SHA-256 HMAC via `X-Signature` header
+- **Retry logic with backoff** — 3 retries with exponential backoff (1s, 2s, 4s)
+- **Admin API for managing webhooks** — full REST API to list, create, update, and delete webhook registrations
+- **Documentation** — complete setup guide, payload examples, and signature verification code samples
 - State tracking to avoid duplicate notifications across restarts
-- REST API to manage webhook registrations at runtime
 - Delivery log for debugging
 
 ## Quick Start
